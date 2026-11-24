@@ -462,4 +462,4 @@ The **Measure Selector** (Total Revenue / Total cost / Total profits / Total Ord
 
 ## 👤 Author
 
-**[[Abdulbari Soliman]]** · [[LinkedIn](https://www.linkedin.com/in/abdulbari-soilman/)](#) · [[Portfolio](https://github.com/AbdulbariSoliman)](#)
+**Abdulbari Soliman** · [LinkedIn](https://www.linkedin.com/in/abdulbari-soilman/) · [Portfolio](https://github.com/AbdulbariSoliman)
