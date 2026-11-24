@@ -3,8 +3,6 @@
 An end-to-end Power BI project that analyzes **sales, profit, customers, products and returns** for a global bike and accessories retailer (AdventureWorks data).
 It includes data cleaning in Power Query, a star-schema data model, 50+ DAX measures, and interactive features such as a **what-if price slider**, **field parameters**, a **time-intelligence calculation group**, and a **decomposition tree**.
 
-![Executive Dashboard](images/01-executive-overview.png)
-
 **🔗 Live report:** [[Open in Power BI Service](https://app.powerbi.com/links/4JFN0GLHCX?ctid=5b84a64b-40c9-4879-b7dc-53e04c60e0a5&pbi_source=linkShare)](#) <!-- ✏️ paste your public link -->
 
 ---
