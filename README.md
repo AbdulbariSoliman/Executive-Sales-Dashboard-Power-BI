@@ -3,7 +3,10 @@
 An end-to-end Power BI project that analyzes **sales, profit, customers, products and returns** for a global bike and accessories retailer (AdventureWorks data).
 It includes data cleaning in Power Query, a star-schema data model, 50+ DAX measures, and interactive features such as a **what-if price slider**, **field parameters**, a **time-intelligence calculation group**, and a **decomposition tree**.
 
-**🔗 Live report:** [[Open in Power BI Service](https://app.powerbi.com/links/4JFN0GLHCX?ctid=5b84a64b-40c9-4879-b7dc-53e04c60e0a5&pbi_source=linkShare)]
+![Executive Dashboard](images/01-executive-overview.png)
+
+**🔗 Live report:** [Open in Power BI Service](https://app.powerbi.com/links/4JFN0GLHCX?ctid=5b84a64b-40c9-4879-b7dc-53e04c60e0a5&pbi_source=linkShare)
+
 ---
 
 ## 📑 Table of Contents
@@ -162,7 +165,7 @@ erDiagram
 | Calendar Lookup | `day of week`, `Weekend` | `WEEKDAY(Date, 2)`: Weekend if 6 or 7 |
 | Sales Data | `Quantity Type` | `"Multiple Items"` if OrderQuantity > 1 |
 
-![Orders by Income Level and Orders by Occupation](images/sections/income-occupation-donuts.png)
+![Orders by Income Level and Orders by Occupation](images/income-occupation-donuts.png)
 *These columns slice the orders in the income and occupation donut charts.*
 
 <details>
@@ -185,7 +188,7 @@ IF(
 
 ### Core KPIs
 
-![KPI cards](images/sections/kpi-cards.png)
+![KPI cards](images/kpi-cards.png)
 *The headline cards use `Total Revenue`, `Total profits`, `Return Rate` and `Total Orders`, with last-month and target comparisons.*
 
 | Measure | DAX |
@@ -202,7 +205,7 @@ IF(
 
 ### Ratios & Efficiency
 
-![Top 10 products with return % color scale](images/sections/top10-conditional-formatting.png)
+![Top 10 products with return % color scale](images/top10-conditional-formatting.png)
 *Orders, revenue and `Return Rate` side by side, with a red conditional-formatting scale on Return %.*
 
 | Measure | Logic |
@@ -216,7 +219,7 @@ IF(
 
 ### Share of Total (filter context)
 
-![Total Orders by Category](images/sections/orders-by-category.png)
+![Total Orders by Category](images/orders-by-category.png)
 *Category share of orders is the type of view that the `% of …` measures are built for.*
 
 | Measure | Technique |
@@ -231,10 +234,10 @@ IF(
 
 ### Time Intelligence & Targets
 
-![Monthly KPI cards with trend sparklines](images/sections/monthly-kpi-sparklines.png)
+![Monthly KPI cards with trend sparklines](images/monthly-kpi-sparklines.png)
 *Monthly cards compare with the previous month (`Previous Month …`, `… Growth %`).*
 
-![Gauges vs target](images/sections/gauges-vs-target.png)
+![Gauges vs target](images/gauges-vs-target.png)
 *Gauges use the `… Target` measures (previous month × 1.1) as the target marker.*
 
 | Measure | DAX / Logic |
@@ -249,7 +252,7 @@ IF(
 
 ### Customer Detail (drill-through)
 
-![Top customer card](images/sections/customer-detail-card.png)
+![Top customer card](images/customer-detail-card.png)
 *When one customer is in context, the `(Customer Detail)` measures show their name, orders and revenue.*
 
 These measures return a value only when **one** customer is in context, and a fallback otherwise:
@@ -270,9 +273,9 @@ Also: `Total Orders (Customer Detail)` and `Total Revenue (Customer Detail)`.
 
 ### 1. What-If Analysis: Price Adjustment
 
-![Price Adjustment slider](images/sections/whatif-price-slider.png)
+![Price Adjustment slider](images/whatif-price-slider.png)
 
-![Weekly Profits vs Adjusted Profits](images/sections/weekly-profits-adjusted.png)
+![Weekly Profits vs Adjusted Profits](images/weekly-profits-adjusted.png)
 *Moving the slider changes `Adjusted Profits` compared with the actual `Total profits`.*
 
 A slider from −100% to +100% simulates price changes:
@@ -288,9 +291,9 @@ Adjusted Profits = [Adjusted Revenue] - [Total cost]
 
 ### 2. Field Parameters: Dynamic Metric Switching
 
-![Product Metric Selection](images/sections/field-parameter-product-metric.png) ![Measure Selector](images/sections/field-parameter-measure-selector.png)
+![Product Metric Selection](images/field-parameter-product-metric.png) ![Measure Selector](images/field-parameter-measure-selector.png)
 
-![Customer Metric Selection](images/sections/field-parameter-customer-metric.png)
+![Customer Metric Selection](images/field-parameter-customer-metric.png)
 
 Users choose which metric a visual shows, with no duplicate visuals:
 
@@ -307,7 +310,7 @@ The same pattern is used for `Customer Metric Selection` and `Measure Selector`.
 
 ### 3. Calculation Group: Time Intelligence
 
-![Matrix with the Time Intelligence calculation group](images/sections/calc-group-matrix.png)
+![Matrix with the Time Intelligence calculation group](images/calc-group-matrix.png)
 
 One set of time calculations that applies to **any** measure, instead of a YTD or previous-month version of every measure. The calculation items are **Current Measure, Previous Month, MOM, MOM %, QTD and YTD**. Together with the `Measure Selector` field parameter, users pick a measure and see all the time calculations at once.
 
@@ -453,8 +456,7 @@ The **Measure Selector** (Total Revenue / Total cost / Total profits / Total Ord
 ```
 ├── Executive-Sales-Dashboard.pbix
 ├── data/                 # source CSV files
-├── images/               # page screenshots used in this README
-│   └── sections/         # cropped visuals for each feature
+├── images/               # screenshots used in this README
 └── README.md
 ```
 
