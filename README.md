@@ -3,7 +3,7 @@
 An end-to-end Power BI project that analyzes **sales, profit, customers, products and returns** for a global bike and accessories retailer (AdventureWorks data).
 It includes data cleaning in Power Query, a star-schema data model, 50+ DAX measures, and interactive features such as a **what-if price slider**, **field parameters**, a **time-intelligence calculation group**, and a **decomposition tree**.
 
-![Executive Dashboard](images/01-executive-overview.png)
+![Executive Dashboard](01-executive-overview.png)
 
 **🔗 Live report:** [Open in Power BI Service](https://app.powerbi.com/links/4JFN0GLHCX?ctid=5b84a64b-40c9-4879-b7dc-53e04c60e0a5&pbi_source=linkShare)
 
@@ -104,7 +104,7 @@ Details and screenshots for every page are in [Report Pages in Detail](#-report-
 - **Calendar Lookup:** added `Day Name`, `Start of Week`, `Start of Month`, `Start of Quarter`, `Month Name`, `Month`, `Start of Year` and `Year`
 - Removed blank and error rows
 
-> 📸 `![Power Query](images/power-query.png)`
+> 📸 `![Power Query](power-query.png)`
 
 ---
 
@@ -145,7 +145,7 @@ erDiagram
 | `Time Intelligence` | Calculation group |
 | `Model tables`, `Model Columns` | Self-documentation built with `INFO.VIEW.TABLES()` and `INFO.VIEW.COLUMNS()` |
 
-> 📸 `![Data Model](images/data-model.png)`
+> 📸 `![Data Model](data-model.png)`
 
 ---
 
@@ -165,7 +165,7 @@ erDiagram
 | Calendar Lookup | `day of week`, `Weekend` | `WEEKDAY(Date, 2)`: Weekend if 6 or 7 |
 | Sales Data | `Quantity Type` | `"Multiple Items"` if OrderQuantity > 1 |
 
-![Orders by Income Level and Orders by Occupation](images/income-occupation-donuts.png)
+![Orders by Income Level and Orders by Occupation](income-occupation-donuts.png)
 *These columns slice the orders in the income and occupation donut charts.*
 
 <details>
@@ -188,7 +188,7 @@ IF(
 
 ### Core KPIs
 
-![KPI cards](images/kpi-cards.png)
+![KPI cards](kpi-cards.png)
 *The headline cards use `Total Revenue`, `Total profits`, `Return Rate` and `Total Orders`, with last-month and target comparisons.*
 
 | Measure | DAX |
@@ -205,7 +205,7 @@ IF(
 
 ### Ratios & Efficiency
 
-![Top 10 products with return % color scale](images/top10-conditional-formatting.png)
+![Top 10 products with return % color scale](top10-conditional-formatting.png)
 *Orders, revenue and `Return Rate` side by side, with a red conditional-formatting scale on Return %.*
 
 | Measure | Logic |
@@ -219,7 +219,7 @@ IF(
 
 ### Share of Total (filter context)
 
-![Total Orders by Category](images/orders-by-category.png)
+![Total Orders by Category](orders-by-category.png)
 *Category share of orders is the type of view that the `% of …` measures are built for.*
 
 | Measure | Technique |
@@ -234,10 +234,10 @@ IF(
 
 ### Time Intelligence & Targets
 
-![Monthly KPI cards with trend sparklines](images/monthly-kpi-sparklines.png)
+![Monthly KPI cards with trend sparklines](monthly-kpi-sparklines.png)
 *Monthly cards compare with the previous month (`Previous Month …`, `… Growth %`).*
 
-![Gauges vs target](images/gauges-vs-target.png)
+![Gauges vs target](gauges-vs-target.png)
 *Gauges use the `… Target` measures (previous month × 1.1) as the target marker.*
 
 | Measure | DAX / Logic |
@@ -252,7 +252,7 @@ IF(
 
 ### Customer Detail (drill-through)
 
-![Top customer card](images/customer-detail-card.png)
+![Top customer card](customer-detail-card.png)
 *When one customer is in context, the `(Customer Detail)` measures show their name, orders and revenue.*
 
 These measures return a value only when **one** customer is in context, and a fallback otherwise:
@@ -273,9 +273,9 @@ Also: `Total Orders (Customer Detail)` and `Total Revenue (Customer Detail)`.
 
 ### 1. What-If Analysis: Price Adjustment
 
-![Price Adjustment slider](images/whatif-price-slider.png)
+![Price Adjustment slider](whatif-price-slider.png)
 
-![Weekly Profits vs Adjusted Profits](images/weekly-profits-adjusted.png)
+![Weekly Profits vs Adjusted Profits](weekly-profits-adjusted.png)
 *Moving the slider changes `Adjusted Profits` compared with the actual `Total profits`.*
 
 A slider from −100% to +100% simulates price changes:
@@ -291,9 +291,9 @@ Adjusted Profits = [Adjusted Revenue] - [Total cost]
 
 ### 2. Field Parameters: Dynamic Metric Switching
 
-![Product Metric Selection](images/field-parameter-product-metric.png) ![Measure Selector](images/field-parameter-measure-selector.png)
+![Product Metric Selection](field-parameter-product-metric.png) ![Measure Selector](field-parameter-measure-selector.png)
 
-![Customer Metric Selection](images/field-parameter-customer-metric.png)
+![Customer Metric Selection](field-parameter-customer-metric.png)
 
 Users choose which metric a visual shows, with no duplicate visuals:
 
@@ -310,7 +310,7 @@ The same pattern is used for `Customer Metric Selection` and `Measure Selector`.
 
 ### 3. Calculation Group: Time Intelligence
 
-![Matrix with the Time Intelligence calculation group](images/calc-group-matrix.png)
+![Matrix with the Time Intelligence calculation group](calc-group-matrix.png)
 
 One set of time calculations that applies to **any** measure, instead of a YTD or previous-month version of every measure. The calculation items are **Current Measure, Previous Month, MOM, MOM %, QTD and YTD**. Together with the `Measure Selector` field parameter, users pick a measure and see all the time calculations at once.
 
@@ -376,7 +376,7 @@ A navigation bar on the left links the pages (Executive, Map, Products, Customer
 - **Monthly KPI cards with sparklines:** revenue, orders, profit, returns
 - **Most Ordered / Most Returned Product Type** cards
 
-![Executive Overview](images/01-executive-overview.png)
+![Executive Overview](01-executive-overview.png)
 
 ### 2. Product Detail
 *How does a product perform vs. target, and what happens if we change prices?*
@@ -386,7 +386,7 @@ A navigation bar on the left links the pages (Executive, Map, Products, Customer
 - **Product Metric Selection:** a field-parameter radio list that switches the area chart
 - **Selected Product** card
 
-![Product Detail](images/02-product-detail.png)
+![Product Detail](02-product-detail.png)
 
 ### 3. Map
 *Where do sales come from?*
@@ -394,7 +394,7 @@ A navigation bar on the left links the pages (Executive, Map, Products, Customer
 - Bubble map sized by sales: the **United States** is the largest market, followed by Australia, Canada, the United Kingdom, France and Germany
 - Region buttons (Select all / Europe / North America / Pacific) filter the map
 
-![Map](images/03-map.png)
+![Map](03-map.png)
 
 ### 4. Customer Detail
 *Who are our customers, and which are the most valuable?*
@@ -406,14 +406,14 @@ A navigation bar on the left links the pages (Executive, Map, Products, Customer
 - **Top Customer (by Revenue):** Mr. Maurice Shan, 6 orders, $12.41K
 - Year range slider (2020–2022) and a customer name list
 
-![Customer Detail](images/04-customer-detail.png)
+![Customer Detail](04-customer-detail.png)
 
 ### 5. Orders Explorer (Decomposition Tree)
 *What drives total orders?*
 
 A decomposition tree splits **Total Orders (25,164)** step by step: Country → Product → Category → Subcategory. Users choose the path themselves, or let Power BI pick the next best split (the 💡 levels). The example path: United Kingdom → Sport-100 Helmet, Blue → Accessories → Helmets. Summary cards show Total Orders, Total Profits, Total Customers and Total Returns.
 
-![Orders Explorer](images/05-orders-decomposition-tree.png)
+![Orders Explorer](05-orders-decomposition-tree.png)
 
 ### 6. Time Intelligence
 *How does each subcategory compare with last month, this quarter and this year?*
@@ -431,7 +431,7 @@ A matrix by subcategory, driven by the **Time Intelligence calculation group**:
 
 The **Measure Selector** (Total Revenue / Total cost / Total profits / Total Orders / Quantity Sold) changes which measure every column uses. Rows expand by year (for example Mountain Bikes → 2020, 2021, 2022).
 
-![Time Intelligence](images/06-time-intelligence.png)
+![Time Intelligence](06-time-intelligence.png)
 
 ---
 
@@ -456,7 +456,7 @@ The **Measure Selector** (Total Revenue / Total cost / Total profits / Total Ord
 ```
 ├── Executive-Sales-Dashboard.pbix
 ├── data/                 # source CSV files
-├── images/               # screenshots used in this README
+├── *.png                 # screenshots used in this README
 └── README.md
 ```
 
